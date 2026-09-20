@@ -10,7 +10,7 @@ const embeddingModel = openrouter.textEmbeddingModel(
 );
 
 //singular for search queries
-export async function generateEmbedding( text :String){
+export async function generateEmbedding( text :string){
 
     const input = text.replace("\n", " ");
 
@@ -23,7 +23,7 @@ export async function generateEmbedding( text :String){
 }
 
 //batch for document processing 
-export async function generateEmbeddings( texts: String[]){
+export async function generateEmbeddings( texts: string[]){
     const inputs = texts.map((text)=> text.replace("\n", " "));
 
     const { embeddings } = await embedMany({
